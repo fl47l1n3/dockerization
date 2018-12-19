@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  # Simplest service which gets Dockerfile from root of repository
+  simplest-service:
+    build: .
+    volumes:
+      - .:/prj
+
+  # Grouping Dockerfile's in ./docker directory
+  from-dir-1:
+    build:
+      dockerfile: ./docker/service-1.Dockerfile
+      context: .
+
+  from-dir-2:
+    build:
+      dockerfile: ./docker/service-2.Dockerfile
+      context: .
