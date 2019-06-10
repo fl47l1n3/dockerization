@@ -17,3 +17,10 @@ services:
     build:
       dockerfile: ./docker/service-2.Dockerfile
       context: .
+
+networks:
+  custom_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.10.0.0/16

@@ -7,3 +7,7 @@ RUN apt-get update && apt-get install -y \
     iputils-ping \
     wget \
 && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /prj
+
+CMD /bin/bash
